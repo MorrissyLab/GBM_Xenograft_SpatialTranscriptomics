@@ -14,7 +14,7 @@ mito_genes <- c( rownames(GBM_xeno)[grep("^GRCh38-MT-", rownames(GBM_xeno))], ro
 GBM_xeno[["percent.mt"]] <- PercentageFeatureSet(GBM_xeno, features = mito_genes)
 
 # Filter spots
-GBM_xeno <- subset(GBM_xeno, subset = nFeature_RNA > 200 & nCount_RNA > 500 & percent.mt < 50)
+GBM_xeno <- subset(GBM_xeno, subset = nFeature_RNA > 100)
 
 # Normalize
 GBM_xeno <- NormalizeData(GBM_xeno, normalization.method = "LogNormalize", scale.factor = 10000)
